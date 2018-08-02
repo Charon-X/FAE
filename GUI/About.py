@@ -33,6 +33,7 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label.setText(_translate("Form",
+"Specifically designed to Jiangsu Provence Hospital\n\n"
 "FeAture Explorer (FAE)\n"
 "\n"
 "Author:\n"
