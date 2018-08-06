@@ -59,8 +59,9 @@ class DataContainer:
             return True
 
     def HasNonValidNumber(self):
+        array_flat = self._array.flatten()
         for index in range(self._array.size):
-            if not self.IsValidNumber(self._array.flatten()[index]):
+            if not self.IsValidNumber(array_flat[index]):
                 return True
         return False
 
@@ -118,7 +119,7 @@ class DataContainer:
             index = np.nan
         self.__feature_name.pop(index)
         self.__label = self.__df[label_name].values
-        self._array = self.__df[self.__feature_name].values
+        self._array = np.asarray(self.__df[self.__feature_name].values, dtype=np.float32)
 
     def UpdateFrameByData(self):
         data = np.concatenate((self.__label[..., np.newaxis], self._array), axis=1)
